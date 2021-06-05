@@ -1,0 +1,38 @@
+DATASET:
+  DATA_ROOT: /home/zhanghaokui/data/nas_data
+  # DATA_ROOT: /data/data2/zhk218/data/nas_data
+  DATA_NAME: DIV2K_800
+  CROP_SIZE: 64
+  TASK: "sr"
+  LOAD_ALL: False
+SEARCH:
+  SEARCH_ON: True
+  ARCH_START_EPOCH: 20
+  TIE_CELL: False
+  VAL_PORTION: 0.05
+MODEL:
+  META_ARCHITECTURE: Sr_supernet
+  META_MODE: Width
+  NUM_STRIDES: 3
+  NUM_LAYERS: 2
+  NUM_BLOCKS: 3
+  FILTER_MULTIPLIER: 8
+  IN_CHANNEL: 3
+  PRIMITIVES: "NO_DEF_L"
+  ACTIVATION_F: "Leaky"
+  AFFINE: False
+  USE_ASPP: True
+  USE_RES: True
+DATALOADER:
+  BATCH_SIZE_TRAIN: 24
+  BATCH_SIZE_TEST: 24
+  NUM_WORKERS: 2
+  S_FACTOR: 4
+  DATA_LIST_DIR: ../preprocess/dataset_json
+
+SOLVER:
+  LOSS: ['l1', 'log_ssim']
+  LOSS_WEIGHT: [1.0, 0.6]
+  MAX_EPOCH: 100
+
+OUTPUT_DIR: output
