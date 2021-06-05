@@ -1,0 +1,14 @@
+v1->v2: 
+1) untie the cell structure, cells in different layers use different architectures and cells in the same layer share the same structure. 
+2) use residual learning. Predicting the residuals between high quality images and low quality images, accelerating the conversicing speed and improving performance.
+3) bulid new search space. Replacing deformable conv with relatively normal conv operations, as deformable conv is time consuming.
+4) new activation function. using Leaky RelU instead of ReLU in new version.
+
+v2->v3
+1) optimizer, replacing sgd optimizer with adam optimizer
+2) sigmoid acitivation. Abandoning the sigmoid activation function in the last conv layer.
+
+v3->v4
+1) upsample sample method is set to bicubic
+2) more flexible width change
+
