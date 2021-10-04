@@ -6,8 +6,37 @@ Code for paper:
 
 Compared with the mehtod propsoed in Memory-Efficient Hierarchical Neural Architecture Search for Image Denoising, we made some improvements, which are explained in "log file for DNAS_For_IR"
 
+
+## Requirements
+```
+This code is tested on Pytorch = 1.0.0.
+
+I build my experimental environment by create a virtual env via anaconda3. 
+After activating you env, you can install other all dependences via run: pip install -r requirements.txt. 
+Note that,  to install graphviz, you also need to run: conda install graphviz. 
+```
+
+## Searching
+searching for denoising network
+cd ./tools/
+python search.py --config-file "../configs/dn/BSD500_3c4n/03_search_CR_R0.yaml" --device '0'
+
+searching for super-resolution network
+cd ./tools/
+python search.py --config-file "../configs/sr/DIV2K_3c3n/03_search_CR.yaml" --device '0'
+
+## Training 
+training the founded denosing network with noise factor=30
+cd ./tools/
+python train.py --config-file ""
+
+## Inference
+
+
+
+## Citation
 If you use this code in your paper, please cite our papers
-'''
+```
 @inproceedings{zhang2020memory,
   title={Memory-efficient hierarchical neural architecture search for image denoising},
   author={Zhang, Haokui and Li, Ying and Chen, Hao and Shen, Chunhua},
@@ -15,13 +44,4 @@ If you use this code in your paper, please cite our papers
   pages={3657--3666},
   year={2020}
 }
-'''
-## Requirements
-'''
-This code is tested on Pytorch = 1.0.0.
-
-I build my experimental environment by create a virtual env via anaconda3. 
-After activating you env, you can install other all dependences via run: pip install -r requirements.txt. Note that,  to install graphviz, you also need to run: conda install graphviz. 
-'''
-
-## Training
+```
