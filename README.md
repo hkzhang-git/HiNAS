@@ -51,9 +51,9 @@ python sr_eval.py --config-file "../configs/sr/DIV2K_2c3n/03_x3_infe_CR.yaml" --
 ## Datasets
 Fetch code:1111
 
->Denoising datasets:BSD300(https://pan.baidu.com/s/1HS4g7DYUxZv-tqQNJI6WsA)
+>Denoising datasets: [BSD200](https://pan.baidu.com/s/1HS4g7DYUxZv-tqQNJI6WsA) [BSD300](https://pan.baidu.com/s/1WBGWtZj91p2x2bPRkmlWVw)
 
->Super-resolution datasets:
+>Super-resolution datasets: [DIV2K_800](https://pan.baidu.com/s/1J6S0dTs1lJG3c0iqdQCBEA) [DIV2K_100](https://pan.baidu.com/s/1e6SrUTx94cWGSu0vjUXASA) [BSD100]() [BSDS100]() [Urban100]() [Manga109]() [General100]() [Set14]() [Set5]()
 
 
 
