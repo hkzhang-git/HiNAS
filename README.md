@@ -18,26 +18,35 @@ Note that,  to install graphviz, you also need to run: conda install graphviz.
 
 ## Searching
 ```
-searching for denoising network
+#searching for denoising network
 cd ./tools/
 python search.py --config-file "../configs/dn/BSD500_3c4n/03_search_CR_R0.yaml" --device '0'
 
-searching for super-resolution network
+#searching for super-resolution network
 cd ./tools/
 python search.py --config-file "../configs/sr/DIV2K_3c3n/03_search_CR.yaml" --device '0'
 ```
 
 ## Training 
 ```
-training the founded denosing network with noise factor=30
+#training the founded denosing network with noise factor=30
 cd ./tools/
 python train.py --config-file "../configs/dn/BSD500_3c4n/03_train_CR_RO/train_s30.yaml" --device '0'
 
-training the founded super-resolution network with SR factor=3
+#training the founded super-resolution network with SR factor=3
 cd ./tools/
 python train.py --config-file "../configs/sr/DIV2K_2c3n/03_x3_train_CR.yaml" --device '0'
 ```
 ## Inference
+```
+# testing the trained denoising network with noise factor=[30 50 70]
+cd ./tools/
+python dn_eval.py --config-file "../configs/dn/BSD500_3c4n/03_train_CR_RO/03_infe.yaml" --device '0'
+
+# testing the trained super-resolution network with sr factor=3
+cd ./tools/
+python sr_eval.py --config-file "../configs/sr/DIV2K_2c3n/03_x3_infe_CR.yaml" --device '0'
+```
 
 ## Datasets
 
