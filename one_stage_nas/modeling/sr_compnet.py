@@ -168,7 +168,7 @@ class Sr_compnet(nn.Module):
             self.loss_weight = []
             for loss_item, loss_weight in zip(cfg.SOLVER.LOSS, cfg.SOLVER.LOSS_WEIGHT):
                 if 'ssim' in loss_item or 'grad' in loss_item:
-                    self.loss_dict.append(loss_dict[loss_item](channel=3, is_cuda=False))
+                    self.loss_dict.append(loss_dict[loss_item](channel=3))
                 else:
                     self.loss_dict.append(loss_dict[loss_item]())
                 self.loss_weight.append(loss_weight)
